@@ -24,10 +24,12 @@ public class Main {
                     lastname = sc.next();
                     System.out.print("\nContact Number");
                     mobno = sc.next();
-                    if (mobno.length() != 10 || mobno.matches("a-zA-Z")) ;
-                {
+                    if (mobno.length() != 10 || mobno.matches("a-zA-Z")) {
 
-                }
+                    } else {
+                        System.out.println("Invalid Number");
+                        continue;
+                    }
             }
         }
     }
