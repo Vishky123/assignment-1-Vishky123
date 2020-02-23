@@ -67,7 +67,11 @@ public class Main {
                     delete.deleteContact(sc.next().trim());
                     break;
                 case 5:
+                    loop = false;
                     break;
+
+
             }
+        }
     }
 }
