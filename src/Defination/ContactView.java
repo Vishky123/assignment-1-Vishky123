@@ -14,16 +14,15 @@ public class ContactView<E> implements ContactViewAdt {
         ArrayList contacts = new ArrayList(DataStructure.getConlist());
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
-            contactNames.add(contact.get(0));
+            contactNames.add(contact.get(0) + "" + contact.get(1));
         }
-        Collections.sort(contactNames);
+        Collections.sort(contactNames, String.CASE_INSENSITIVE_ORDER);
         for (int i = 0; i < contactNames.size(); i++) {
             System.out.println(contactNames.get(i).toString());
 
         }
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
-            for (int j = 0; j < contacts.size(); j++) {
                 if (contact.size() >= 5) {
                     System.out.println("--------------------------------------------------------------");
                     System.out.println("First Name: " + contact.get(0));
@@ -46,7 +45,6 @@ public class ContactView<E> implements ContactViewAdt {
 
                 }
             }
-        }
 
         return null;
 

@@ -1,6 +1,9 @@
 package Main;
 
-import Defination.*;
+import Defination.ContactAdd;
+import Defination.ContactDelete;
+import Defination.ContactSearch;
+import Defination.ContactView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -39,8 +42,11 @@ public class Main {
                         for (int i = 0; i < 100; i++) {
                             System.out.print("Would you like to add another contact number? (y/n):");
                             option = sc.next();
-                            if (option == "y" || option == "Y") {
-                                mobileno.add(sc.nextInt());
+                            sc.nextLine();
+                            if (option.equals("y") || option.equals("Y")) {
+                                System.out.println("Contact Number:");
+                                mobno = sc.next();
+                                mobileno.add(mobno);
                             } else {
                                 break;
                             }
@@ -50,7 +56,6 @@ public class Main {
                     email = sc.next().trim();
                     sc.nextLine();
                     contactadd.newContact(firstname, lastname, mobileno, email);
-                    System.out.println(DataStructure.getConlist());
                     break;
                 case 2:
                     view.printAllContact();

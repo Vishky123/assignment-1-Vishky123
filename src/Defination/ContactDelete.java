@@ -11,8 +11,9 @@ public class ContactDelete<E> implements ContactDeleteAdt<E> {
         ArrayList contacts = new ArrayList(DataStructure.getConlist());
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
-            if ((contact.get(0) + "" + contact.get(1)).equals(name)) {
+            if ((contact.get(0) + " " + contact.get(1)).equals(name)) {
                 DataStructure.removeContact(i);
+                System.out.println("Contact Delete Sucessfully");
                 return true;
             }
         }

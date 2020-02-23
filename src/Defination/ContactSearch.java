@@ -12,7 +12,7 @@ public class ContactSearch<E> implements ContactSearchAdt<E> {
         ArrayList contacts = new ArrayList(DataStructure.getConlist());
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
-            if ((contact.get(0) + "" + contact.get(1)).equals(name)) {
+            if ((contact.get(0) + " " + contact.get(1)).equals(name)) {
                 flag = 1;
                 SearchContact((ArrayList) contacts.get(i));
                 break;
