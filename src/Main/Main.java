@@ -69,10 +69,8 @@ public class Main {
                     break;
                 case 4:
                     ContactDelete delete = new ContactDelete();
-                    System.out.print("Enter the Full name: ");
-                    sc.nextLine();
-                    String del = sc.nextLine();
-                    delete.deleteContact(del);
+
+                    delete.deleteContact();
                     break;
                 case 5:
                     System.out.println("----------------------exit---------------------");
