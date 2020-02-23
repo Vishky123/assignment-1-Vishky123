@@ -1,11 +1,13 @@
 package Main;
 
+import Defination.ContactAdd;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String firstname, lastname, emal, mobno;
+        String firstname, lastname, email, mobno, option;
         int choice;
         ArrayList mobileno = new ArrayList();
         System.out.println("Welcome to Vishal's Contact List");
@@ -19,17 +21,34 @@ public class Main {
                     System.out.println("You have chosen to add a new contact: \n" +
                             "Please enter the name of the Person");
                     System.out.print("First Name:");
-                    firstname = sc.next();
+                    firstname = sc.next().trim();
                     System.out.print("\nLast Name:");
-                    lastname = sc.next();
+                    lastname = sc.next().trim();
                     System.out.print("\nContact Number");
                     mobno = sc.next();
                     if (mobno.length() != 10 || mobno.matches("a-zA-Z")) {
-
-                    } else {
                         System.out.println("Invalid Number");
                         continue;
+
+                    } else {
+                        mobileno.add(mobno);
+                        for (int i = 0; i < 100; i++) {
+                            System.out.println("Would you like to add another contact number? (y/n):");
+                            option = sc.next();
+                            if (option == "y" || option == "Y") {
+                                mobileno.add(sc.nextInt());
+                            } else {
+                                break;
+                            }
+                        }
                     }
+                    System.out.println("Email Address:  ");
+                    email = sc.next().trim();
+                    ContactAdd contactadd = new ContactAdd();
+                    contactadd.newContact(firstname, lastname, mobileno, email);
+                    break;
+                case 2:
+
             }
         }
     }
