@@ -1,9 +1,6 @@
 package Main;
 
-import Defination.ContactAdd;
-import Defination.ContactDelete;
-import Defination.ContactSearch;
-import Defination.ContactView;
+import Defination.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -25,6 +22,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    mobno = null;
                     System.out.println("You have chosen to add a new contact: \n" +
                             "Please enter the name of the Person");
                     System.out.print("First Name:");
@@ -56,6 +54,7 @@ public class Main {
                     email = sc.next().trim();
                     sc.nextLine();
                     contactadd.newContact(firstname, lastname, mobileno, email);
+                    System.out.println(DataStructure.getConlist());
                     break;
                 case 2:
                     view.printAllContact();
