@@ -13,7 +13,7 @@ public class DataStructure {
         DataStructure.conlist.add(conlist);
     }
 
-    public static void removecontact(int index) {
+    public static void removeContact(int index) {
         DataStructure.conlist.remove(index);
     }
 }
