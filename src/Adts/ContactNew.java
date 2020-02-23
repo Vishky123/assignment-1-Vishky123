@@ -1,4 +1,7 @@
 package Adts;
 
-public interface ContactNew {
+import java.util.ArrayList;
+
+public interface ContactNew<E> {
+    boolean newContact(String Firstname, String Lastname, ArrayList MobileNO, String Email);
 }
