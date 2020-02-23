@@ -1,6 +1,7 @@
 package Main;
 
 import Defination.ContactAdd;
+import Defination.ContactDelete;
 import Defination.ContactSearch;
 import Defination.ContactView;
 
@@ -14,9 +15,11 @@ public class Main {
         ArrayList mobileno = new ArrayList();
         System.out.println("Welcome to Vishal's Contact List");
         Scanner sc = new Scanner(System.in);
-        while (true) {
-            System.out.println("Press 1 to add new contact.\n Press 2 to view all contacts.\nPress 3 for search for a contact.\nPress 4 to delete a contact.\nPress 5 to exit program.");
+        boolean loop = true;
+        while (loop) {
+            System.out.println("Press 1 to add new contact.\nPress 2 to view all contacts.\nPress 3 for search for a contact.\nPress 4 to delete a contact.\nPress 5 to exit program.");
             choice = sc.nextInt();
+
 
             switch (choice) {
                 case 1:
@@ -56,8 +59,15 @@ public class Main {
                 case 3:
                     ContactSearch search = new ContactSearch();
                     System.out.println("Enter the full name ");
-                    search.searchContact(sc.next());
+                    search.searchContact(sc.next().trim());
+                    break;
+                case 4:
+                    ContactDelete delete = new ContactDelete();
+                    System.out.println("Enter the Full name ");
+                    delete.deleteContact(sc.next().trim());
+                    break;
+                case 5:
+                    break;
             }
-        }
     }
 }
