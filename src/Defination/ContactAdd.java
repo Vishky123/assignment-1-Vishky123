@@ -14,7 +14,7 @@ public class ContactAdd<E> implements ContactNew<E> {
             contact.add(MobileNO.get(i));
         }
         contact.add(Email);
-
+        DataStructure.setConlist(contact);
 
         return true;
     }
