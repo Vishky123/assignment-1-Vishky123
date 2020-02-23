@@ -8,4 +8,12 @@ public class DataStructure {
     public static ArrayList getConlist() {
         return conlist;
     }
+
+    public static void setConlist(ArrayList conlist) {
+        DataStructure.conlist.add(conlist);
+    }
+
+    public static void removecontact(int index) {
+        DataStructure.conlist.remove(index);
+    }
 }
