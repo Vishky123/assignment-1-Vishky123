@@ -21,6 +21,13 @@ public class ContactView<E> implements ContactViewAdt {
             System.out.println(contactNames.get(i).toString());
 
         }
+        for (int i = 0; i < contacts.size(); i++) {
+            ArrayList contact = new ArrayList((Collection) contacts.get(i));
+            for (int j = 0; j < contacts.size(); j++) {
+                if (contactNames.get(j).toString().equals(contact.get(0).toString())) {
+                }
+            }
+        }
 
 
         return null;
