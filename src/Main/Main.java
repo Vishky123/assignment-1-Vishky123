@@ -1,6 +1,8 @@
 package Main;
 
 import Defination.ContactAdd;
+import Defination.ContactSearch;
+import Defination.ContactView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -48,7 +50,13 @@ public class Main {
                     contactadd.newContact(firstname, lastname, mobileno, email);
                     break;
                 case 2:
-
+                    ContactView view = new ContactView();
+                    view.printAllContact();
+                    break;
+                case 3:
+                    ContactSearch search = new ContactSearch();
+                    System.out.println("Enter the full name ");
+                    search.searchContact(sc.next());
             }
         }
     }

@@ -12,7 +12,8 @@ public class ContactSearch<E> implements ContactSearchAdt<E> {
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
             if ((contact.get(0) + "" + contact.get(1)).equals(name)) {
-
+                SearchContact((ArrayList) contacts.get(i));
+                break;
             }
         }
     }
