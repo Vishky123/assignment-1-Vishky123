@@ -8,15 +8,22 @@ import java.util.Collection;
 public class ContactSearch<E> implements ContactSearchAdt<E> {
     @Override
     public void searchContact(String name) {
+        int flag = 0;
         ArrayList contacts = new ArrayList(DataStructure.getConlist());
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
             if ((contact.get(0) + "" + contact.get(1)).equals(name)) {
+                flag = 1;
                 SearchContact((ArrayList) contacts.get(i));
                 break;
             }
         }
+        if (flag == 0) {
+            System.out.println("CONTACT NOT FOUND");
+        }
+
     }
+
 
     public void SearchContact(ArrayList contact) {
         if (contact.size() >= 5) {

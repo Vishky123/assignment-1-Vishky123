@@ -1,9 +1,6 @@
 package Main;
 
-import Defination.ContactAdd;
-import Defination.ContactDelete;
-import Defination.ContactSearch;
-import Defination.ContactView;
+import Defination.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,6 +8,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String firstname, lastname, email, mobno, option;
+        ContactAdd contactadd = new ContactAdd();
+        ContactView view = new ContactView();
         int choice;
         ArrayList mobileno = new ArrayList();
         System.out.println("Welcome to Vishal's Contact List");
@@ -27,9 +26,9 @@ public class Main {
                             "Please enter the name of the Person");
                     System.out.print("First Name:");
                     firstname = sc.next().trim();
-                    System.out.print("\nLast Name:");
+                    System.out.print("Last Name:");
                     lastname = sc.next().trim();
-                    System.out.print("\nContact Number");
+                    System.out.print("Contact Number:");
                     mobno = sc.next();
                     if (mobno.length() != 10 || mobno.matches("a-zA-Z")) {
                         System.out.println("Invalid Number");
@@ -38,7 +37,7 @@ public class Main {
                     } else {
                         mobileno.add(mobno);
                         for (int i = 0; i < 100; i++) {
-                            System.out.println("Would you like to add another contact number? (y/n):");
+                            System.out.print("Would you like to add another contact number? (y/n):");
                             option = sc.next();
                             if (option == "y" || option == "Y") {
                                 mobileno.add(sc.nextInt());
@@ -47,30 +46,37 @@ public class Main {
                             }
                         }
                     }
-                    System.out.println("Email Address:  ");
+                    System.out.print("Email Address:  ");
                     email = sc.next().trim();
-                    ContactAdd contactadd = new ContactAdd();
+                    sc.nextLine();
                     contactadd.newContact(firstname, lastname, mobileno, email);
+                    System.out.println(DataStructure.getConlist());
                     break;
                 case 2:
-                    ContactView view = new ContactView();
                     view.printAllContact();
                     break;
                 case 3:
                     ContactSearch search = new ContactSearch();
-                    System.out.println("Enter the full name ");
-                    search.searchContact(sc.next().trim());
+                    System.out.print("Enter the full name: ");
+                    sc.nextLine();
+                    String seaarch1 = sc.nextLine();
+                    search.searchContact(seaarch1);
                     break;
                 case 4:
                     ContactDelete delete = new ContactDelete();
-                    System.out.println("Enter the Full name ");
-                    delete.deleteContact(sc.next().trim());
+                    System.out.print("Enter the Full name: ");
+                    sc.nextLine();
+                    String del = sc.nextLine();
+                    delete.deleteContact(del);
                     break;
                 case 5:
+                    System.out.println("----------------------exit---------------------");
                     loop = false;
                     break;
 
-
+                default:
+                    System.out.print("Enter thre Valid Option.");
+                    break;
             }
         }
     }
