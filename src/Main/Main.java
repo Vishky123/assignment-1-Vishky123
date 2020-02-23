@@ -1,6 +1,9 @@
 package Main;
 
-import Defination.*;
+import Defination.ContactAdd;
+import Defination.ContactDelete;
+import Defination.ContactSearch;
+import Defination.ContactView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -54,7 +57,6 @@ public class Main {
                     email = sc.next().trim();
                     sc.nextLine();
                     contactadd.newContact(firstname, lastname, mobileno, email);
-                    System.out.println(DataStructure.getConlist());
                     break;
                 case 2:
                     view.printAllContact();
