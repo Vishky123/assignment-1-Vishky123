@@ -14,37 +14,37 @@ public class ContactView<E> implements ContactViewAdt {
         ArrayList contacts = new ArrayList(DataStructure.getConlist());
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
-            contactNames.add(contact.get(0) + "" + contact.get(1));
+            contactNames.add(contact.get(0) + " " + contact.get(1));
         }
         Collections.sort(contactNames, String.CASE_INSENSITIVE_ORDER);
-        for (int i = 0; i < contactNames.size(); i++) {
-            System.out.println(contactNames.get(i).toString());
+        for (Object contactName : contactNames) {
+            for (int i = 0; i < contacts.size(); i++) {
+                ArrayList contact = new ArrayList((Collection) contacts.get(i));
+                if (contactName.equals(contact.get(0) + " " + contact.get(1)))
+                    if (contact.size() >= 5) {
+                        System.out.println("--------------------------------------------------------------");
+                        System.out.println("First Name: " + contact.get(0));
+                        System.out.println("Last Name: " + contact.get(1));
 
-        }
-        for (int i = 0; i < contacts.size(); i++) {
-            ArrayList contact = new ArrayList((Collection) contacts.get(i));
-                if (contact.size() >= 5) {
-                    System.out.println("--------------------------------------------------------------");
-                    System.out.println("First Name: " + contact.get(0));
-                    System.out.println("Last Name: " + contact.get(1));
+                        System.out.println("Contact Number(s):");
+                        for (int m = 2; m < contact.size() - 1; m++) {
+                            System.out.print(contact.get(m) + " ");
+                        }
+                        System.out.println();
+                        System.out.println("Email:" + contact.get(contact.size() - 1));
+                        System.out.println("--------------------------------------------------------------");
+                    } else {
+                        System.out.println("--------------------------------------------------------------");
+                        System.out.println("First Name: " + contact.get(0));
+                        System.out.println("Last Name: " + contact.get(1));
+                        System.out.println("Contact Number:" + contact.get(2));
+                        System.out.println("Email:" + contact.get(contact.size() - 1) + "\n");
+                        System.out.println("--------------------------------------------------------------");
 
-                    System.out.println("Contact Number(s):");
-                    for (int m = 2; m < contact.size() - 1; m++) {
-                        System.out.print(contact.get(m) + " ");
                     }
-                    System.out.println();
-                    System.out.println("Email:" + contact.get(contact.size() - 1));
-                    System.out.println("--------------------------------------------------------------");
-                } else {
-                    System.out.println("--------------------------------------------------------------");
-                    System.out.println("First Name: " + contact.get(0));
-                    System.out.println("Last Name: " + contact.get(1));
-                    System.out.println("Contact Number:" + contact.get(2));
-                    System.out.println("Email:" + contact.get(contact.size() - 1) + "\n");
-                    System.out.println("--------------------------------------------------------------");
-
-                }
             }
+        }
+
 
         return null;
 
