@@ -45,15 +45,22 @@ public class Main {
                             option = sc.next();
                             sc.nextLine();
                             if (option.equals("y") || option.equals("Y")) {
-                                System.out.println("Contact Number:");
+                                System.out.print("Contact Number:");
                                 mobno = sc.next();
-                                mobileno.add(mobno);
-                            } else {
+                                if (mobno.length() != 10 || mobno.matches("a-zA-Z")) {
+                                    System.out.println("Invalid Number.");
+                                    break;
+                                } else {
+                                    mobileno.add(mobno);
+                                }
+                            } else if (option.equals("n") || option.equals("N")) {
                                 break;
+                            } else {
+                                System.out.println("Try again .\nEnter the valid character.");
                             }
                         }
                     }
-                    System.out.print("Email Address:  ");
+                    System.out.print("Email Address:");
                     email = sc.next().trim();
                     sc.nextLine();
                     contactadd.newContact(firstname, lastname, mobileno, email);

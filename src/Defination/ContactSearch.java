@@ -19,7 +19,7 @@ public class ContactSearch<E> implements ContactSearchAdt<E> {
             }
         }
         if (flag == 0) {
-            System.out.println("CONTACT NOT FOUND");
+            System.out.println("Contact Not Found");
         }
 
     }

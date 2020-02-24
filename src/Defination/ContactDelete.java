@@ -12,6 +12,7 @@ public class ContactDelete<E> implements ContactDeleteAdt<E> {
 
     @Override
     public boolean deleteContact() {
+        int flag = 0;
 //        ArrayList contacts = new ArrayList(DataStructure.getConlist());
         System.out.println("Here are all your contact");
         ArrayList contactNames = new ArrayList();
@@ -31,8 +32,12 @@ public class ContactDelete<E> implements ContactDeleteAdt<E> {
             if ((contact.get(0) + " " + contact.get(1)).equals(del)) {
                 DataStructure.removeContact(i);
                 System.out.println("Contact Delete Sucessfully");
+                flag = 1;
                 return true;
             }
+        }
+        if (flag == 0) {
+            System.out.println("Contact Not Found");
         }
         return false;
     }
