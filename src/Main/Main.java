@@ -14,7 +14,7 @@ public class Main {
         ContactAdd contactadd = new ContactAdd();
         ContactView view = new ContactView();
         int choice;
-        ArrayList mobileno = new ArrayList();
+
         System.out.println("Welcome to Vishal's Contact List");
         Scanner sc = new Scanner(System.in);
         boolean loop = true;
@@ -25,7 +25,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    mobno = null;
+                    ArrayList mobileno = new ArrayList();
                     System.out.println("You have chosen to add a new contact: \n" +
                             "Please enter the name of the Person");
                     System.out.print("First Name:");
@@ -86,7 +86,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.print("Enter thre Valid Option.");
+                    System.out.println("Enter thre Valid Option.");
                     break;
             }
         }

@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class ContactDelete<E> implements ContactDeleteAdt<E> {
+public class ContactDelete implements ContactDeleteAdt {
     Scanner sc = new Scanner(System.in);
 
     @Override
@@ -23,7 +23,7 @@ public class ContactDelete<E> implements ContactDeleteAdt<E> {
         }
         Collections.sort(contactNames, String.CASE_INSENSITIVE_ORDER);
         for (int i = 0; i < contactNames.size(); i++) {
-            System.out.println(contactNames.get(i).toString());
+            System.out.println(i + 1 + "." + contactNames.get(i).toString());
         }
         System.out.print("Enter the Full name: ");
         String del = sc.nextLine();

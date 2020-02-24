@@ -4,7 +4,7 @@ import Adts.ContactNew;
 
 import java.util.ArrayList;
 
-public class ContactAdd<E> implements ContactNew<E> {
+public class ContactAdd implements ContactNew {
     @Override
     public boolean newContact(String Firstname, String Lastname, ArrayList MobileNO, String Email) {
         ArrayList contact = new ArrayList();

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class ContactView<E> implements ContactViewAdt {
+public class ContactView implements ContactViewAdt {
     @Override
     public Object printAllContact() {
         System.out.println("Here are all your contact");

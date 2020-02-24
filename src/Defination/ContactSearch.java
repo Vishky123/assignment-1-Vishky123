@@ -5,7 +5,7 @@ import Adts.ContactSearchAdt;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ContactSearch<E> implements ContactSearchAdt<E> {
+public class ContactSearch implements ContactSearchAdt {
     @Override
     public void searchContact(String name) {
         int flag = 0;
@@ -27,7 +27,7 @@ public class ContactSearch<E> implements ContactSearchAdt<E> {
 
     public void SearchContact(ArrayList contact) {
         if (contact.size() >= 5) {
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("-------------*-------------*-------------*-------------");
             System.out.println("First Name: " + contact.get(0));
             System.out.println("Last Name: " + contact.get(1));
 
@@ -37,14 +37,14 @@ public class ContactSearch<E> implements ContactSearchAdt<E> {
             }
             System.out.println();
             System.out.println("Email:" + contact.get(contact.size() - 1));
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("-------------*-------------*-------------*-------------");
         } else {
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("-------------*-------------*-------------*-------------");
             System.out.println("First Name: " + contact.get(0));
             System.out.println("Last Name: " + contact.get(1));
             System.out.println("Contact Number:" + contact.get(2));
             System.out.println("Email:" + contact.get(contact.size() - 1) + "\n");
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("-------------*-------------*-------------*-------------");
 
         }
     }
